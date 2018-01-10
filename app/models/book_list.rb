@@ -1,2 +1,3 @@
 class BookList < ActiveRecord::Base
-end 
+  belongs_to :users 
+end
