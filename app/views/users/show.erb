@@ -1,0 +1,8 @@
+<h1>Book List:</h1>
+
+<p><% @user.books.each.with_index(1) do |book, index| %></p>
+  <div>
+    <p><%= index %>. <%= book.title %> <%= book.description%>
+  </div>
+  <% end %>
+  
