@@ -47,6 +47,31 @@ class BooksController <ApplicationController
       redirect to "/login"
     end
   end
-  
+
+  patch "/booklists/:id" do
+    if params[:title] == ""
+      redirect "/booklists/#{:id}/edit"
+    else
+      @book = Book.findy_by_id(params[:id])
+      @book.title = params[:title]
+      @book.description = params[:description]
+      @book.save
+      redirect to "/booklists/#{@book.id}"
+    end
+  end
+
+  delete "/booklists/:id/delete" do
+    if logged_in?
+      @book = Book.find_by_id(params[:id])
+      if @book.user_id == current_user.id
+        @book.delete
+        redirect "/booklists"
+      else
+        redirect to "/booklists"
+      end
+    else
+      redirect to "/login"
+    end
+  end         
 
 end
