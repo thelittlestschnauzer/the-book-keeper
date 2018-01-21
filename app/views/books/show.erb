@@ -1,0 +1,10 @@
+<p><%= @book.title %> <%= @book.description %></p>
+
+  <p><form action="/booklists/<%=@book.id%>/delete" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Book from List"></p>
+  </form>
+
+  <a href="/booklists/<%=@book.id%>/edit">Edit this Book</a>
+  <br></br>
+  <a href="/booklists">Back to Book List</a>

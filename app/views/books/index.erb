@@ -1,0 +1,9 @@
+<h2> Your Book List: <h2>
+
+  <p><% @books.each.with_index(1) do |book, index| %></p>
+  <div>
+    <p><%= index%>. <%= @book.title %> <%= book.description %></p>
+      <a href="/booklists/<%= book.id %>/edit">Edit this Book</a>
+    <% end %>
+  </div>
+  
