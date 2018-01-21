@@ -46,6 +46,7 @@ class BooksController <ApplicationController
     else
       redirect to "/login"
     end
-  end 
+  end
+  
 
 end
